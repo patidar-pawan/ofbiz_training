@@ -35,6 +35,12 @@ under the License.
             <key-map field-name="demoPartyTypeId"></key-map>
         </relation>
     </entity>
+    <entity entity-name="demoPerson" entity-package="org.apache.ofbiz.ofbizdemo" title="Demo person entity ">
+        <field name="demoPartyId" type="id"></field>
+        <field name="firstName" type="id"></field>
+        <field name="lastName" type="name"></field>
+        <prim-key field="demoPartyId"></prim-key>
+    </entity>
     <!-- ========================================================= -->
     <!-- ======================== Defaults ======================= -->
     <!-- ========================================================= -->
