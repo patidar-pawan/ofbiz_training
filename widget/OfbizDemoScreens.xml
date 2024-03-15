@@ -30,6 +30,11 @@ under the License.
                 <decorator-screen name="OfbizDemoCommonDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                          <label text="Hello word"> </label>
+<!--                        add-->
+                        <screenlet title="First_Screen">
+                            <include-form name="Form_Name" location="component://ofbizDemo/widget/OfbizDemoForms.xml"/>
+                        </screenlet>
+<!--end-->
                     </decorator-section>
                 </decorator-screen>
             </widgets>

@@ -20,4 +20,8 @@ under the License.
 
 <entity-engine-xml>
 
+<!--        <demoParty demoPartyId="PAWAN_PATIDAR" demoPartyTypeId="Person" demoPartyStatus="PARTY_ENABLE"></demoParty>-->
+    <demoPartyType demoPartyTypeId="FAMILY" />
+
+
 </entity-engine-xml>

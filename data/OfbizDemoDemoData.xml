@@ -19,6 +19,6 @@ under the License.
 -->
 
 <entity-engine-xml>
-    <ofbizDemoType ofbizDemoTypeId="first_xml" ></ofbizDemoType>
+    <demoParty demoPartyId="1001" demoPartyStatus="Party_Enable" demoPartyTypeId="Person" />
 
 </entity-engine-xml>
