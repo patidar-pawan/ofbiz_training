@@ -21,21 +21,28 @@ under the License.
 <forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns="http://ofbiz.apache.org/Widget-Form" xsi:schemaLocation="http://ofbiz.apache.org/Widget-Form http://ofbiz.apache.org/dtds/widget-form.xsd">
 <!--addstart -->
-    <form name="Form_Name" type="single" target="Form_Target" focus-field-name="demoPartyId">
+    <form name="Form_Name" type="single" target="createPartyService" focus-field-name="demoPartyId">
         <actions>
 <!--            <set field="demoPartyStatus" value="${groovy:org.apache.ofbiz.common.CommonWorkers.getStateList(delegator)}"/>-->
         </actions>
-
         <field name="demoPartyId">
             <text/>
         </field>
         <field name="demoPartyTypeId">
-            <text/>
+            <drop-down allow-empty="false" current-description="">
+                <!---We have made this drop down options dynamic(Values from db) using this -->
+                <entity-options description="${description}" key-field-name="demoPartyTypeId" entity-name="demoPartyType">
+                    <entity-order-by field-name="description"/>
+                </entity-options>
+            </drop-down>
+
+
         </field>
         <field name="demoPartyStatus">
             <text/>
         </field>
 
+        <field name="submitButton" ><submit button-type="button"/></field>
     </form>
 
 <!--    addedend-->

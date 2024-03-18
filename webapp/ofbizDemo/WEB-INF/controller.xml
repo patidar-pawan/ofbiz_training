@@ -42,9 +42,13 @@ under the License.
     <!-- Request Mappings -->
     <request-map uri="main"><security https="true" auth="true"/><response name="success" type="view" value="main"/></request-map>
 <!--add-->
-    <request-map uri="Form_Target"><security https="true" auth="true"/><response name="success" type="view" value="Form_Target"/></request-map>
+    <request-map uri="createPartyService">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="createPartyService"/>
+        <response name="success" type="view" value="main"/>
+    </request-map>
 
-    <view-map name="Form_Target" type="screen" page="component://ofbizDemo/widget/OfbizDemoForms.xml#Form_Target"/>
+    <view-map name="createPartyService" type="screen" page="component://ofbizDemo/widget/OfbizDemoForms.xml#createPartyService"/>
 
     <!--    end-->
     <!-- View Mappings -->
