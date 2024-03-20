@@ -32,9 +32,14 @@ under the License.
     </service>
     <service name="createPartyService" default-entity-name="demoParty" engine="entity-auto" invoke="create" auth="true">
         <description>Create an Ofbiz Demo record for person</description>
-        <auto-attributes include="pk" mode="OUT" optional="false"/>
+        <auto-attributes  include="pk" mode="OUT" optional="false"/>
         <auto-attributes include="nonpk" mode="IN" optional="false"/>
         <override name="comments" optional="true"/>
     </service>
-    
+    <service name="FindPartyService" default-entity-name="demoParty" engine="entity-auto" invoke="update" auth="true">
+        <description>Create an Ofbiz Demo record for person</description>
+        <auto-attributes  include="pk" mode="OUT" optional="false"/>
+        <auto-attributes include="nonpk" mode="IN" optional="false"/>
+        <override name="comments" optional="true"/>
+    </service>
 </services>

@@ -31,7 +31,7 @@ under the License.
         <field name="demoPartyTypeId">
             <drop-down allow-empty="false" current-description="">
                 <!---We have made this drop down options dynamic(Values from db) using this -->
-                <entity-options description="${description}" key-field-name="demoPartyTypeId" entity-name="demoPartyType">
+                <entity-options description="${demoPartyTypeId}" key-field-name="demoPartyTypeId" entity-name="demoPartyType">
                     <entity-order-by field-name="description"/>
                 </entity-options>
             </drop-down>
@@ -40,11 +40,40 @@ under the License.
         </field>
         <field name="demoPartyStatus">
             <text/>
+
         </field>
+        <field name="description">
+            <text/>
+        </field>
+
 
         <field name="submitButton" ><submit button-type="button"/></field>
     </form>
+    <form name="FindParty" type="single" target="FindParty" default-entity-name="demoParty">
+        <field name="noConditionFind"><hidden value="Y"/></field>
+        <field name="demoPartyId" title="${uiLabelMap.demoPartyId}"><text-find/></field>
+        <field name="demoPartyTypeId" title="${uiLabelMap.demoPartyTypeId}"><text-find/></field>
+        <field name="demoPartyStats" title="${uiLabelMap.status}"><text-find/></field>
 
-<!--    addedend-->
+
+        <field name="searchButton" title="${uiLabelMap.Search}" widget-style="smallSubmit"><submit button-type="button" /></field>
+
+    </form>
+    <form name="ListParty" type="list" list-name="listIt" paginate-target="FindPerson" default-entity-name="demoParty" separate-columns="true"
+          odd-row-style="alternate-row" header-row-style="header-row-2" default-table-style="basic-table hover-bar">
+        <actions>
+            <!-- Preparing search results for user query by using OFBiz stock service to perform find operations on a single entity or view entity -->
+            <service service-name="performFind" result-map="result" result-map-list="listIt">
+                <field-map field-name="inputFields" from-field="demoPartyCtx"/>
+                <field-map field-name="entityName" value="demoParty"/>
+                <field-map field-name="orderBy" from-field="parameters.sortField"/>
+                <field-map field-name="viewIndex" from-field="viewIndex"/>
+                <field-map field-name="viewSize" from-field="viewSize"/>
+            </service>
+        </actions>
+        <field name="demoPartyId" title="${uiLabelMap.demoPartyId}"><display/></field>
+        <field name="demoPartyTypeId" title="${uiLabelMap.demoPartyTypeId}"><display-entity entity-name="demoPartyType"/></field>
+        <field name="demoPartyStatus" title="${uiLabelMap.status}" sort-field="true"><display/></field>
+    </form>
 
 </forms>

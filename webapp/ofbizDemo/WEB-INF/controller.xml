@@ -47,10 +47,17 @@ under the License.
         <event type="service" invoke="createPartyService"/>
         <response name="success" type="view" value="main"/>
     </request-map>
+    <request-map uri="FindParty">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="FindParty"/>
+    </request-map>
 
-    <view-map name="createPartyService" type="screen" page="component://ofbizDemo/widget/OfbizDemoForms.xml#createPartyService"/>
+
+
+    <!--    <view-map name="createPartyService" type="screen" page="component://ofbizDemo/widget/OfbizDemoForms.xml#createPartyService"/>-->
 
     <!--    end-->
     <!-- View Mappings -->
     <view-map name="main" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#main"/>
+    <view-map name="FindParty" type="screen" page="component://ofbizDemo/widget/OfbizDemoScreens.xml#FindParty"></view-map>
 </site-conf>

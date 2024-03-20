@@ -27,17 +27,49 @@ under the License.
                 <set field="headerItem" value="main"/><!-- this highlights the selected menu-item with name "main" -->
             </actions>
             <widgets>
+
                 <decorator-screen name="OfbizDemoCommonDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
 <!--                        add-->
+
                         <screenlet title="First_Screen">
                             <include-form name="Form_Name" location="component://ofbizDemo/widget/OfbizDemoForms.xml"/>
                         </screenlet>
-<!--end-->
+
+
                     </decorator-section>
                 </decorator-screen>
             </widgets>
         </section>
     </screen>
+
+
+    <screen name="FindParty">
+        <section>
+            <actions>
+                <set field="headerItem" value="FindPerson"/><!-- this highlights the selected menu-item with name "main" -->
+                <set field="titleProperty" value="PageTitleFindOfbizDemo"/>
+                <set field="demoPartyCtx" from-field="parameters"/>
+            </actions>
+            <widgets>
+
+                <decorator-screen name="OfbizDemoCommonDecorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <!--                        add-->
+
+                        <screenlet title="FindParty">
+                            <include-form name="FindParty" location="component://ofbizDemo/widget/OfbizDemoForms.xml"/>
+                        </screenlet>
+                        <screenlet title="ListParty">
+                            <include-form name="ListParty" location="component://ofbizDemo/widget/OfbizDemoForms.xml"/>
+                        </screenlet>
+
+
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
 
 </screens>

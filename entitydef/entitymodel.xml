@@ -32,6 +32,7 @@ under the License.
         <field name="demoPartyId" type="id"></field>
         <field name="demoPartyTypeId" type="id"></field>
         <field name="demoPartyStatus" type="name"></field>
+        <field name="description" type="name"></field>
         <prim-key field="demoPartyId"></prim-key>
         <relation type="one" fk-name="ODEM_OD_TYPE_ID" rel-entity-name="demoPartyType">
             <key-map field-name="demoPartyTypeId"></key-map>
@@ -41,6 +42,8 @@ under the License.
         <field name="demoPartyId" type="id"></field>
         <field name="firstName" type="id"></field>
         <field name="lastName" type="name"></field>
+        <field name="status" type="name"></field>
+        <field name="description" type="name"></field>
         <prim-key field="demoPartyId"></prim-key>
     </entity>
     <!-- ========================================================= -->
